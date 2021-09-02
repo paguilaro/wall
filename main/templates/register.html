@@ -1,0 +1,54 @@
+{% extends './base.html' %}
+{% block content %}
+REGISTER
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <form id="reg_form" method="POST" action="/register">
+                <h4>Registro de Usuarios</h4>
+                {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="validate form-control" id="name" aria-describedby="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="validate form-control" id="email" required name= "email" aria-describedby="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="validate form-control" minlength="6" id="password" required name= "password" aria-describedby="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password_confirm" class="form-label">Repetir Password</label>
+                        <input type="password" class="validate form-control" minlength="6" id="password_confirm">
+                    </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>   
+        <div class="col-1">
+
+        </div>
+        
+        <div class="col-4">
+            <form id="reg_form" method="POST" action="/register">
+                <h4>Inicio Sesion</h4>
+                {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="validate form-control" id="email" required name= "email" aria-describedby="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="validate form-control" minlength="6" id="password" required name= "password" aria-describedby="">
+                    </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>   
+    </div>
+</div>
+
+
+
+{% endblock %}
